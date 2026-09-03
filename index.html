@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="assets/profile-photo2.png">
+    <title>Arnav Khanna</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+        .modal { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+
+            <div class="flex items-center gap-8 text-lg">
+                <a href="about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+
+            <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- Hero -->
+        <div class="flex flex-col md:flex-row gap-12 items-center mb-20">
+            <!-- Circular Photo -->
+            <div class="flex-shrink-0">
+                <img src="assets/profile-photo2.png" alt="Your Photo" 
+                     class="w-64 h-64 rounded-full object-cover border-4 border-[#03045e] dark:border-[#caf0f8] shadow-2xl">
+            </div>
+
+            <div class="flex-1">
+                <h1 class="text-6xl md:text-7xl font-bold leading-tight font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">
+                    <i id="decode-hey" class="">Hey!</i> I'm <span class="text-[#0077B6] font-bold font-['Space_Grotesk'] dark:text-[#00B4D8]" id="decode-name"><b>Arnav</b></span>.
+                </h1>
+                <p class="mt-3 text-xl dark:text-[#edf2fb] text-[#001233]">I'm a Cambridge engineering student working towards building the future.</p>
+                
+                <!-- Contact links -->
+                <div class="mt-10 flex flex-wrap gap-3">
+                    <a href="https://www.linkedin.com/in/arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="mailto:arnavmkhanna@gmail.com"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+ 
+                    <a href="mailto:ak2625@cam.ac.uk"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-x1 hover:scale-110 transition">
+                        <img src="assets/cambridge-logo.png" alt="Cambridge Email" class="w-6 h-6 object-contain grayscale">
+                    </a>
+
+                    <a href="https://medium.com/@arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-brands fa-medium"></i>
+                    </a>
+
+                    <a href="https://substack.com/@arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 hover:scale-110 transition">
+                        <img src="assets/substack-logo.png" alt="Substack" class="w-6 h-6 object-contain grayscale brightness-0 dark:invert">
+                    </a>
+
+                    <a href="https://instagram.com/arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <!-- <a href="https://github.com/arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-brands fa-github"></i>
+                    </a> -->
+
+                    <!-- <a href="https://youtube.com/arnavmkhanna" target="_blank" rel="noopener"
+                    class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience & Education -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-semibold mb-8 dark:text-[#edf2fb] text-[#001233]">Professional Background</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Cambridge modal -->
+                <div onclick="openModal('cambridge')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition transition flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">University of Cambridge</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">Graduating Summer 2029 • Engineering</p>
+                    </div>
+                    <img src="assets/cambridge-logo.png" alt="University of Cambridge" class="w-20 h-20 object-contain flex-shrink-0">
+                </div>
+                <template id="modal-cambridge">
+                    <h2 class="dark:text-[#edf2fb] text-[#001233] text-3xl font-bold mb-4">University of Cambridge
+                        <img src="assets/cambridge-logo.png" alt="University of Cambridge" class="inline ml-1 w-8 h-8 object-contain flex-shrink-0">
+                    </h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Completing an <b>integrated Bachelor's and Master's of Engineering</b> in 2029. One of seventeen engineering students at Emmanuel College in the University of Cambridge.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Currently studying general engineering (specialising next year).
+                                Subjects include mechanics, structures, materials, thermofluids, electrical, information, maths, business, alongside various projects, labs, electives, and more.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Member of the Full Blue Racing (<b>Formula Student</b>) and <b>Cambridge University Space Flight</b> (CUSF) student societies.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Bowside  men's rower for <b>Emmanuel College's Boat Club</b>. <i>Fit via vi</i>.</span>
+                        </li>
+                    </ul>
+                </template>
+
+                <!-- IIT modal -->
+                <div onclick="openModal('iit')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Indian Institute of Technology</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">2025 • Summer Internship</p>
+                    </div>
+                    <img src="assets/iitb-logo.png" alt="IIT Bhubaneshwar" class="w-20 h-20 object-contain flex-shrink-0">
+                </div>
+                <template id="modal-iit">
+                    <h2 class="dark:text-[#edf2fb] text-[#001233] text-3xl font-bold mb-4">Indian Institute of Technology
+                        <img src="assets/iitb-logo.png" alt="IIT" class="inline ml-1 w-8 h-8 object-contain flex-shrink-0">
+                    </h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Completed a <b>summer research internship</b> in IIT Bhubaneshwar under the professor Dr Anirban Bhattacharya and a PhD student at the School of Mechanical Sciences.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">My internship involved creating a <b>realistic digital mathematical model</b> of non-uniform metallic foam, based on parameters such as porosity. I also helped create a program using <b>computer vision</b> to detect solid and liquid regions in phase change materials such as wax.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">The application of my work was to help analyse generic low porosity non-uniform metallic foams using more sophisticated tools such as ANSYS, which could apply the <b>Finite Element Method</b> to the model my program created.
+                                This assisted research in the field, which could be helpful in, e.g., <b>energy storage using phase change materials</b> (PCMs) contained in metallic foams, low density structural design, and more.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">This internship allowed me to gain more understanding in PhD-level laboratory work, iterative improvement, and formal research. Furthermore, I developed my programming, simulation, and material engineering skills.</span>
+                        </li>
+                    </ul>
+                </template>
+
+                <!-- TKS modal -->
+                <div onclick="openModal('tks')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">The Knowledge Society</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">2023-2024 • Innovate</p>
+                    </div>
+                    <img src="assets/tks-logo1.png" alt="TKS" class="w-20 h-20 object-contain flex-shrink-0">
+                </div>
+                <template id="modal-tks">
+                    <h2 class="dark:text-[#edf2fb] text-[#001233] text-3xl font-bold mb-4">The Knowledge Society
+                        <img src="assets/tks-logo1.png" alt="TKS" class="inline ml-2 w-10 h-10 object-contain flex-shrink-0">
+                    </h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg"><a href="https://tks.world" style="color: #007bff;" class="underline">TKS</a> is a 10-month accelerator program and <b>innovation training ground</b> for curious students ready to solve real-world problems, develop essential skills, and create a lasting impact through innovation.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Part of the 2023-24 cohort, mentored by Director <a href="https://www.linkedin.com/in/harirmahesh/" style="color: #007bff;" class="underline">Hari Mahesh</a>.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">At TKS, I became a finalist at virtual global hackathons, researched mindsets and developed my network, dug into AI and other emerging technologies, acted as a <b>consultant for Google and Microsoft</b>, 
+                                and created Sanavo, a drug delivery mechanism to <b>improve treatment for brain cancer</b>.
+                            </span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Connected with current and future changemakers and innovators including <a href="https://www.linkedin.com/in/hunainmuhammad/" style="color: #007bff;" class="underline">Muhammad</a>, <a href="https://www.linkedin.com/in/rhea-grace-mehra/" style="color: #007bff;" class="underline">Rhea</a>, <a href="https://www.linkedin.com/in/mark-daniel-leupold/" style="color: #007bff;" class="underline">Mark</a>, 
+                            <a href="https://www.linkedin.com/in/natan-kramskiy-1a3999294/" style="color: #007bff;" class="underline">Natan</a>, <a href="https://www.linkedin.com/in/nitish-manocha-07/" style="color: #007bff;" class="underline">Nitish</a>, <a href="https://www.linkedin.com/in/narin-y%C3%BCksek-2690142a0/" style="color: #007bff;" class="underline">Narin</a>, and many more.
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">TKS introduced me to the idea of entrepreneurship, innovation, foresight, and building extraordinary things.</span>
+                        </li>
+                    </ul>
+                </template>
+                
+                <!-- ISL modal -->
+                <div onclick="openModal('isl')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">International School of Lusaka</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">2021-2023 • International Baccalaureate</p>
+                    </div>
+                    <img src="assets/isl-logo1.png" alt="ISL" class="w-20 h-20 object-contain flex-shrink-0">
+                </div>
+                <template id="modal-isl">
+                    <h2 class="text-3xl font-bold mb-4 dark:text-[#edf2fb] text-[#001233]">International School of Lusaka
+                        <img src="assets/isl-logo1.png" alt="ISL" class="inline ml-1 w-8 h-8 object-contain flex-shrink-0">
+                    </h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Achieved a <b>43/45</b> in the International Baccalaureate Diploma Programme, in the <b>98th percentile globally</b>. 
+                            Subjects included: Higher Level Maths AA, Chemistry, Physics, Biology; Standard Level English Lang&Lit, Spanish AB; alongside the IB core.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Recipient of ISL's merit-based '<b>IB Scholarship</b>' of over $15,000 to help talented students along their educational path.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">I planned, founded, and taught the <b>ISL Robotics Club</b> during my final (senior) year, drawing from previous robotics experience.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Awarded the prestigious "Head of School" award upon graduation (equivalent to <b>Valedictorian</b>).</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Completed the Bronze and Silver <b>Duke of Edinburgh</b> awards while at ISL (I was underage and ineligible for Gold).</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">I represented the ISL <b>sports team</b>, the Wild Dogs, in ISAZ, the regional and national school sports championship, in volleyball, football, and field hockey.
+                                I also played piano, both solo and in the <b>ISL Orchestra</b>, including prestigious events such as the 32nd Germany Unity Day celebration at the German Embassy.
+                            </span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">I was a key contributor towards winning the House Cup and was elected to represent my class in the Student Council in my final (senior) year.</span>
+                        </li>
+                    </ul>
+                </template>
+
+                <!-- FGC modal -->
+                <div onclick="openModal('fgc')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition  flex items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">FIRST Global Challenge</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">2018-2023 • Olympics of Robotics</p>
+                    </div>
+                    <img src="assets/first-logo1.png" alt="FIRST" class="w-20 h-20 object-contain flex-shrink-0">
+                </div>
+                <template id="modal-fgc">
+                    <h2 class="text-3xl font-bold mb-4 dark:text-[#edf2fb] text-[#001233]">FIRST Global Challenge
+                        <img src="assets/first-logo1.png" alt="FGC" class="inline ml-1 w-8 h-8 object-contain flex-shrink-0">
+                    </h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">Member of the <b>Zambian National Robotics Team</b> in various annual FIRST Global Challenge competitions.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">FIRST Global Challenge is called the '<b>Olympics of Robotics</b>', bringing together the brightest youth from over 190 countries to compete and collaborate under the banner of STEM by designing the best robots to complete a series of tasks and challenges.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">I was the youngest-ever member of Team Zambia in 2018 (Mexico City), a Core Member in 2019 (Dubai), and the <b>Deputy Captain</b> in 2022 (Geneva), where we ranked in the top 50.</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                            <span class="text-lg">In 2023 (Singapore), I volunteered at the <b>Robot Hospital</b> where I worked as a Robot Inspector and Flying Squad member. My role involved helping struggling teams with complex problems (both hardware and software) on the fly, often solo, with limited resources and time.</span>
+                        </li>
+                    </ul>
+                </template>
+            </div>
+        </section>
+
+        <!-- Featured Content, Projects & News, Other Side Quests -->
+        <!-- Add similar sections as needed. Example: -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-semibold mb-8 dark:text-[#edf2fb] text-[#001233]">Featured</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Project cards with onclick to open modals -->
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+        <div class="bg-white dark:bg-zinc-900 rounded-3xl border border-[#03045e] dark:border-[#caf0f8] max-w-4xl w-full max-h-[90vh] overflow-auto modal">
+            <div class="p-8">
+                <button onclick="closeModal()" class="float-right text-4xl leading-none hover:text-gray-400">×</button>
+                <div id="modal-content" class="prose dark:prose-invert max-w-none">
+                    <!-- Dynamic content loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index_script.js"></script>
+</body>
+</html>

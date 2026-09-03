@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/profile-photo2.png">
+    <title>About; Arnav Khanna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+
+            <div class="flex items-center gap-8 text-lg">
+                <a href="about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+
+            <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- About Hero -->
+        <section class="mb-8">
+            <h1 class="dark:text-[#edf2fb] text-[#001233] text-5xl md:text-6xl font-bold leading-tight mb-6">About <span class="text-[#0077B6] dark:text-[#00B4D8]">Me</span>.</h1>
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <p class="text-justify text-lg max-w-1xl leading-relaxed">
+                    At heart, I like to analyse and solve problems. Often, these problems involve physics, code, and/or real-world constraint (but not always!). 
+                    I learn about and build things, from cancer cures to the Olympics of Robotics, and I'm drawn to complex challenges. Cambridge gives me many academic tools. I like to polish other skills myself.<br>
+
+                    <br>Professionally, I'm still early in my career. However, my interest is piqued by problems at the frontier: new technology as well as making existing technology more accessible. 
+                    I build from first principles, and my Indo-Zambian background allows me to notice things others may miss.<br>
+
+                    <br>Outside of academics, I climbed Mt Kilimanjaro on my 18th birthday, and I’m an avid runner (currently up to half-marathon distance). I like to travel and explore, having visited 17 countries.
+                    I also read voraciously across a spectrum of genres: history, science, philosophy, finance, and mystery being some of my favourites.
+                </p>
+            </div>
+        </section>
+
+        <!-- Values / Goals List -->
+        <section class="mb-20">
+            <h2 class="text-3xl dark:text-[#edf2fb] text-[#001233] font-semibold mb-8">Core Values</h2>
+            <div class="text-lg bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <ul class="space-y-4 max-w-5xl text-lg">
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Future-oriented.</b> Whatever I do, I do to improve and build a better future.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Breadth <i>and</i> depth.</b> They build off each other, as in T-shaped thinking.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Learning by building.</b> Theory grows when it's forced to survive contact with real implementations.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Discipline.</b> Running has taught me that consistency > intensity.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Self-Agency.</b> Whether as a team leader, team member, or solo, I keep deadlines.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Bias towards Action.</b> I'd rather have a working prototype than a 100% perfect blueprint.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Antifragility.</b> What doesn't kill you makes you stronger.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>First Principles Thinking.</b> The Why, How, and What take precedence over assumptions and past practices.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Failing Forwards.</b> Errors and missteps are data to be learnt from.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Moonshot Thinking.</b> Radical results come from audacious goals.</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">→</span>
+                        <span><b>Curiosity.</b> The world is too large to ever stop learning, and life is the eternal teacher.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="about_script.js"></script>
+</body>
+</html>

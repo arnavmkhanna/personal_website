@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/profile-photo2.png">
+    <title>Contact; Arnav Khanna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+
+        /* Flip card mechanics */
+        .flip-card {
+            perspective: 1000px;
+            height: 88px;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0 1.5rem;
+            border-radius: 1rem;
+        }
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 dark:text-[#edf2fb] text-[#001233] font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+
+            <div class="flex items-center gap-8 text-lg">
+                <a href="about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+
+            <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- Contact Hero -->
+        <section class="mb-16">
+            <h1 class="dark:text-[#edf2fb] text-[#001233] text-5xl md:text-6xl font-bold leading-tight mb-6">Get In <span class="text-[#0077B6] dark:text-[#00B4D8]">Touch</span>.</h1>
+            <p class="text-xl dark:text-[#edf2fb] text-[#001233] max-w-2xl">
+                Feel free to check out my work or contact me on any platform!
+            </p>
+        </section>
+
+        <!-- Contact Links -->
+        <section class="mb-20">
+            <div class="grid md:grid-cols-2 gap-5">
+
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-linkedin-in text-3xl" style="color:#0A66C2"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">LinkedIn</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-linkedin-in text-3xl" style="color:#0A66C2"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">linkedin.com/in/arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Personal Email -->
+                <a href="mailto:arnavmkhanna@gmail.com" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-solid fa-envelope text-3xl" style="color:#EA4335"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">Personal Email</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-solid fa-envelope text-3xl" style="color:#EA4335"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">arnavmkhanna@gmail.com</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Cambridge Email -->
+                <a href="mailto:ak2625@cam.ac.uk" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-8 h-8 object-contain">
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">Cambridge Email</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-8 h-8 object-contain">
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">ak2625@cam.ac.uk</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Medium -->
+                <a href="https://medium.com/@arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-medium text-3xl" style="color:#12100E; -webkit-text-stroke: 1px #ffffff88;"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">Medium</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-medium text-3xl" style="color:#12100E; -webkit-text-stroke: 1px #ffffff88;"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">medium.com/@arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Substack -->
+                <a href="https://substack.com/@arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <img src="assets/substack-logo.png" alt="Substack" class="w-8 h-8 object-contain">
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">Substack</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <img src="assets/substack-logo.png" alt="Substack" class="w-8 h-8 object-contain">
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">substack.com/@arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-instagram text-3xl" style="color:#E1306C"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">Instagram</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-instagram text-3xl" style="color:#E1306C"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">instagram.com/arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- GitHub -->
+                
+                <!-- <a href="https://github.com/arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-github text-3xl"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">GitHub</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-github text-3xl"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">github.com/arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a> -->
+                
+
+                <!-- YouTube -->
+                
+                <!-- <a href="https://youtube.com/arnavmkhanna" target="_blank" rel="noopener" class="flip-card block">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-youtube text-3xl"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">YouTube</span>
+                        </div>
+                        <div class="flip-card-back bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] dark:text-[#edf2fb] text-[#001233]">
+                            <i class="fa-brands fa-youtube text-3xl"></i>
+                            <span class="text-xl dark:text-[#edf2fb] text-[#001233] font-semibold">youtube.com/arnavmkhanna</span>
+                        </div>
+                    </div>
+                </a> -->
+                
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="contact_script.js"></script>
+</body>
+</html>

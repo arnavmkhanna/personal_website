@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/profile-photo2.png">
+    <title>Latest; Arnav Khanna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+
+        /* Thumbnail hover overlay */
+        .entry-thumb {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .entry-thumb > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .entry-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .entry-card:hover .entry-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+
+            <div class="flex items-center gap-8 text-lg">
+                <a href="about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+
+            <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- Latest Hero -->
+        <section class="mb-16">
+            <h1 class="text-5xl dark:text-[#edf2fb] text-[#001233] md:text-6xl font-bold leading-tight mb-6">Latest <span class="text-[#0077B6] dark:text-[#00B4D8]">Updates</span>.</h1>
+            <p class="text-xl dark:text-[#edf2fb] text-[#001233] max-w-1xl">
+                Check out my latest writing, projects, and updates, wherever they live!
+            </p>
+        </section>
+
+        <!-- Entries -->
+        <section class="mb-20">
+            <div class="flex flex-col gap-6">
+
+                <!-- ============ SUBSTACK SEP 26 ============ -->
+                <a href="#" target="_blank" rel="noopener"
+                   class="entry-card flex gap-6 p-4 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.00] transition bg-[#f8f9fb] dark:bg-[#000814]">
+
+                    <!-- Thumbnail / date square -->
+                    <div class="w-32 h-32 flex-shrink-0">
+                        <div class="entry-thumb">
+                            <img src="assets/cambridge-logo.png" alt="Thumbnail">
+                            <div class="entry-overlay bg-black/70 text-white">
+                                <!-- <i class="fa-brands fa-linkedin text-2xl"></i> -->
+                                <img src="assets/substack-logo.png" alt="Substack" class="w-6 h-6 object-contain grayscale brightness-0 invert">
+                                <span class="text-sm font-medium">September 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title & Summary -->
+                    <div class="flex-1 flex flex-col">
+                        <!-- <p class="text-sm text-gray-500 mb-1">Jan 1, 2026 · Substack</p> -->
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">A personal website, a new project, and a return.</h3>
+                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] justify-center">
+                            I return to my TKS-era blog with a new post. In this post, I talk about building this personal website, life at Cambridge University, and my experience with two recent personal projects.
+                        </p>
+                        <span class="text-[#007bff] font-medium text-sm">Read article →</span>
+                    </div>
+                </a>
+                <!-- ================= END ENTRY 1 ================= -->
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="latest_script.js"></script>
+</body>
+</html>

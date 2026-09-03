@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/profile-photo2.png">
+    <title>Portfolio; Arnav Khanna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+        .modal { animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+
+            <div class="flex items-center gap-8 text-lg">
+                <a href="about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+
+            <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- Portfolio Hero -->
+        <section class="mb-10">
+            <h1 class="text-5xl dark:text-[#edf2fb] text-[#001233] md:text-6xl font-bold leading-tight mb-6">My Project <span class="text-[#0077B6] dark:text-[#00B4D8]">Portfolio</span>.</h1>
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <p class="text-justify text-lg max-w-1xl leading-relaxed">
+                    Welcome to my project portfolio, the core of the website.<br>
+
+                    <br>As an engineer, I've built many things over the last several years. Some of them are associated with some or the other experience, such as my IIT Internship, Cambridge coursework, TKS competitions, or more.
+                    Others, especially recently, are completely independent, which I've built purely out of curiosity, fun, and a little resolve. This portfolio depicts all of them together, in a (hopefully) more synthesised way.<br>
+
+                    <br>I hope to display my skills, work, and interests, and I'm always keen to hear feedback!
+                </p>
+            </div>
+        </section>
+
+        <!-- PROJECTS LIST -->
+        <section class="mb-20">
+            <!-- h2 class="text-3xl font-semibold mb-8">Projects</h2> -->
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- ============ FORMULA 1 (link) ============ -->
+                <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-55 overflow-hidden">
+                        <img src="assets/sanavo2.png" alt="F1"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Optimal F1 Lap</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Calculating and animating the optimal lap for any Formula 1 Grand Prix track using a quasi-steady-state point-mass vehicle dynamics Python simulation.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ MARS LANDER ============ -->
+                <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-55 overflow-hidden">
+                        <img src="assets/sanavo2.png" alt="Mars Lander"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Mars Lander</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Built a fully functioning spacrecraft landing simulator, including the physics engine, graphical animation, and autopilot programme to control the spacecraft, in C++.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ IEP MAGNETOMETER ============ -->
+                <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-52 overflow-hidden">
+                        <img src="assets/iep2.png" alt="IEP Project"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Analogue Magnetometer to LED Circuit</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Designed an analogue breadboard-based electronic circuit to measure magnetic fields, offset and amplify voltages, and display magnetic field strength in the form of a 'bar graph' of LED lights.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ STRUCTURAL DESIGN PROJECT ============ -->
+                <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-52 overflow-hidden">
+                        <img src="assets/sdc.jpg" alt="Structural Design Challenge"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Structural Design Challenge</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Designed and drew an Aluminium cantilever truss to bear and fail at specified loads. Constructed and tested the truss in the workshop and reported on the results.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ SOLIDWORKS ROLLERCOASTER ============ -->
+                <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-52 overflow-hidden">
+                        <img src="assets/sanavo2.png" alt="SolidWorks Rollercoaster"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">CAD Rollercoaster</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Digitally designed and constructed, from scratch, each part of a carriage and rollercoaster track in CAD (SolidWorks), and simulated the resulting motion.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ SANAVO ============ -->
+                <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-52 overflow-hidden">
+                        <img src="assets/sanavo2.png" alt="Sanavo"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Sanavo</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-justify text-sm">
+                            Ideated a drug delivery & bio-sensor mechanism for glioblastoma (brain cancer) treatment. Developed as part of a team moonshot competition; commended by experts from Harvard & Johns Hopkins.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- ============ MICROSOFT DATA CENTRE (modal) ============ -->
+                <div onclick="openModal('example')" class="group cursor-pointer rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="h-52 overflow-hidden">
+                        <img src="assets/microsoft.jpg" alt="Microsoft Data Centre"
+                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                    </div>
+                    <div class="pl-6 pr-6 pb-3 pt-3">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Pitching Modular Data Centres to Microsoft</h3>
+                        <p class="dark:text-[#edf2fb] text-[#001233] text-sm">
+                            Ideated and pitched modular, sustainable, and low-cost data centres to Microsoft as part of a team consulting competition. Developed as a business case study during the very beginning of the AI era.
+                        </p>
+                    </div>
+                </div>
+                <template id="modal-example">
+                    <h2 class="text-3xl font-bold mb-4">Example Side Project</h2>
+                    <p>
+                        A short paragraph describing what this project is, what you built, and what you
+                        learned. Keep it to a few sentences since this is a quick modal, not a full page.
+                    </p>
+                </template>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+        <div class="bg-[#f8f9fb] dark:bg-[#000814] border border-[#03045e] dark:border-[#caf0f8] rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-auto modal">
+            <div class="p-8">
+                <button onclick="closeModal()" class="float-right text-4xl leading-none hover:text-gray-400">×</button>
+                <div id="modal-content" class="prose dark:prose-invert max-w-none">
+                    <!-- Dynamic content loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="portfolio_script.js"></script>
+</body>
+</html>

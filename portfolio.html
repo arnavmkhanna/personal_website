@@ -10,7 +10,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (isDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -19,6 +31,8 @@
         .content { position: relative; z-index: 10; }
         .modal { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        .modal-closing { animation: fadeOut 0.25s ease forwards; }
 
         /* Custom scrollbar — light and dark mode aware */
         /* Firefox */
@@ -82,10 +96,10 @@
                 <p class="text-justify text-lg max-w-1xl leading-relaxed">
                     Welcome to my project portfolio, the core of the website.<br>
 
-                    <br>As an engineer, I've built several projects over the last several years. Some of them are associated with some or the other experience, such as my IIT Internship, Cambridge coursework, TKS competitions, or more.
+                    <br>As an engineer, I've built several projects over the years. Some of them are associated with some or the other experience, such as my IIT Internship, Cambridge coursework, TKS competitions, or more.
                     Others, especially recently, are completely independent, which I've built purely out of curiosity, fun, and a little resolve. This portfolio depicts all of them together, in a (hopefully) more synthesised way.<br>
 
-                    <br>I hope to display my skills, work, and interests, and I'm always keen to hear feedback!
+                    <br>I aim to display my skills, work, and interests, and I'm always keen to hear feedback!
                 </p>
             </div>
         </section>
@@ -97,9 +111,11 @@
 
                 <!-- ============ FORMULA 1 (link) ============ -->
                 <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-55 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sanavo2.png" alt="F1"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <img src="assets/profile-photo2.png" alt="Personal"
+                            class="absolute top-2 right-2 w-8 h-8 object-contain rounded-full bg-white/90 p-1 shadow">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Optimal F1 Lap</h3>
@@ -111,9 +127,11 @@
 
                 <!-- ============ BEOING CAD ============ -->
                 <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-55 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sanavo2.png" alt="F1"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <img src="assets/profile-photo2.png" alt="Personal"
+                            class="absolute top-2 right-2 w-8 h-8 object-contain rounded-full bg-white/90 p-1 shadow">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Boeing 777 CAD</h3>
@@ -125,9 +143,12 @@
 
                 <!-- ============ MARS LANDER ============ -->
                 <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-55 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sanavo2.png" alt="Mars Lander"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center overflow-hidden">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-5 h-5 object-contain">
+                        </div>
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Mars Lander</h3>
@@ -137,11 +158,14 @@
                     </div>
                 </a>
 
-                                <!-- ============ STRUCTURAL DESIGN PROJECT ============ -->
+                <!-- ============ STRUCTURAL DESIGN PROJECT ============ -->
                 <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sdc.jpg" alt="Structural Design Challenge"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-black/90 shadow flex items-center justify-center overflow-hidden">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-5 h-5 object-contain">
+                        </div>
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Structural Design Challenge</h3>
@@ -153,9 +177,12 @@
 
                 <!-- ============ IEP MAGNETOMETER ============ -->
                 <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/iep2.png" alt="IEP Project"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center overflow-hidden">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-5 h-5 object-contain">
+                        </div>
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Analogue Magnetometer to LED Circuit</h3>
@@ -167,9 +194,12 @@
 
                 <!-- ============ SOLIDWORKS ROLLERCOASTER ============ -->
                 <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sanavo2.png" alt="SolidWorks Rollercoaster"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <div class="absolute top-2 right-2 w-8 h-8 rounded-full bg-white/90 shadow flex items-center justify-center overflow-hidden">
+                            <img src="assets/cambridge-logo.png" alt="Cambridge" class="w-5 h-5 object-contain">
+                        </div>
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">CAD Rollercoaster</h3>
@@ -180,10 +210,12 @@
                 </a>
 
                 <!-- ============ SANAVO ============ -->
-                <a href="project-sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                <a href="projects/sanavo.html" class="group block rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/sanavo2.png" alt="Sanavo"
-                             class="w-full h-full object-cover group-hover:scale-105 transition">
+                            class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <img src="assets/tks-logo.png" alt="TKS"
+                            class="absolute top-2 right-2 w-8 h-8 object-contain rounded-full bg-white/90 p-1 shadow">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Sanavo Moonshot</h3>
@@ -195,9 +227,11 @@
 
                 <!-- ============ MICROSOFT DATA CENTRE (modal) ============ -->
                 <div onclick="openModal('microsoft')" class="group cursor-pointer rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/microsoft.jpg" alt="Microsoft Pitch Deck"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <img src="assets/tks-logo.png" alt="TKS"
+                            class="absolute top-2 right-2 w-8 h-8 object-contain rounded-full bg-white/90 p-1 shadow">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Consulting for Microsoft</h3>
@@ -217,7 +251,6 @@
                         </li>
                         <li class="flex gap-2">
                             <span>Drawing from experience in the Fall Sprint Challenge with Google, after weeks of research, stress-testing, and iterative improvement on multiple well-developed ideas, we settled on implementing Modular Data Centres (MDCs) over large traditional data centres.</span>
-                            </span>
                         </li>
                         <li class="flex gap-2">
                             <span>
@@ -237,7 +270,7 @@
                             </span>
                         </li>
                         <div class="flex justify-center mt-10">
-                            <a href="https://docs.google.com/presentation/d/1HxkPFxsJFu9JBViYfClxNIVIHTKm7u3JfqnS2jKlHfc/edit?usp=sharing" target="_blank" rel="noopener"
+                            <a href="https://docs.google.com/presentation/d/1gYU_P2qNsrRscAi6cDZXx3weoTDaHXltAH1w0aaADGY/edit?usp=sharing" target="_blank" rel="noopener"
                             class="px-6 py-3 rounded-full font-medium bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105 transition">
                                 View the Pitch Deck
                             </a>
@@ -252,9 +285,11 @@
 
                 <!-- ============ GOOGLE PITCH DECK ============ -->
                 <div onclick="openModal('google')" class="group cursor-pointer rounded-2xl border border-[#03045e] dark:border-[#caf0f8] transition overflow-hidden bg-[#f8f9fb] dark:bg-[#000814] aspect-[16/11]">
-                    <div class="h-52 overflow-hidden">
+                    <div class="relative h-52 overflow-hidden">
                         <img src="assets/google.jpg" alt="Google Pitch Deck"
                              class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <img src="assets/tks-logo.png" alt="TKS"
+                            class="absolute top-2 right-2 w-8 h-8 object-contain rounded-full bg-white/90 p-1 shadow">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
                         <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Consulting for Google</h3>
@@ -296,7 +331,7 @@
                             </span>
                         </li>
                         <div class="flex justify-center mt-6">
-                            <a href="https://docs.google.com/presentation/d/1FMsKc586WVYMS7QcJvgebPu2I9EP2RwS-u0swNXq7xU/edit?usp=sharing" target="_blank" rel="noopener"
+                            <a href="https://docs.google.com/presentation/d/1HAYEbUCZ66wNSgfUlN6A0M8xb4XOk-RE2w_Q3b-IQzE/edit?usp=sharing" target="_blank" rel="noopener"
                             class="px-6 py-3 rounded-full font-medium bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 hover:scale-105 transition">
                                 View the Pitch Deck
                             </a>
@@ -329,6 +364,6 @@
         </div>
     </div>
 
-    <script src="portfolio_script.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>

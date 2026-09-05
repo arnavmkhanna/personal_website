@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" href="../assets/profile-photo2.png">
+    <title>Project Title — Arnav Khanna</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <script>
+        // Must run before the Tailwind CDN script loads, so dark mode is
+        // class-driven from the very first paint (avoids the light-mode flash).
+        tailwind.config = {
+            darkMode: 'class'
+        };
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (isDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body, html { margin:0; padding:0; height:100%; overflow-x:hidden; }
+        canvas { position: fixed; top:0; left:0; z-index: -1; }
+        .content { position: relative; z-index: 10; }
+        .modal { animation: fadeIn 0.3s ease; }
+        .modal-closing { animation: fadeOut 0.25s ease forwards; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+        /* Custom scrollbar */
+        html { scrollbar-width: thin; scrollbar-color: #9ca3af #f8f9fb; }
+        html.dark { scrollbar-color: #4b5563 #000814; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #f8f9fb; }
+        ::-webkit-scrollbar-thumb { background-color: #9ca3af; border-radius: 9999px; border: 2px solid #f8f9fb; }
+        html.dark ::-webkit-scrollbar-track { background: #000814; }
+        html.dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border: 2px solid #000814; }
+    </style>
+</head>
+<body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
+
+    <!-- Animated Background -->
+    <canvas id="nodes"></canvas>
+
+    <div class="content max-w-5xl mx-auto px-6 py-8">
+
+        <!-- Top Navigation -->
+        <nav class="flex justify-between items-center mb-16">
+            <div class="text-2xl font-bold">
+                <a href="../index.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Arnav Khanna</a>
+            </div>
+            <div class="flex items-center gap-8 text-lg">
+                <a href="../about.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">About</a>
+                <a href="../portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Portfolio</a>
+                <a href="../latest.html" class="dark:text-[#edf2fb] text-[#001233] hover:underline">Latest</a>
+                <button id="theme-toggle" class="dark:text-[#edf2fb] text-[#001233] text-3xl hover:scale-110 transition">☾</button>
+            </div>
+            <a href="../contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
+        </nav>
+
+        <!-- Project Header -->
+        <section class="mb-12">
+            <h1 class="text-5xl md:text-6xl font-bold font-['Space_Grotesk'] leading-tight mb-3 dark:text-[#edf2fb] text-[#001233]">
+                Project Title
+            </h1>
+            <p class="text-lg dark:text-[#edf2fb] text-[#001233] opacity-70">
+                Independent Project <!-- or e.g. "In collaboration with Cambridge Engineering" -->
+            </p>
+        </section>
+
+        <!-- Hero Visual -->
+        <section class="mb-4">
+            <div class="rounded-2xl overflow-hidden border border-[#03045e] dark:border-[#caf0f8]">
+                <img src="../assets/project-hero-placeholder.jpg" alt="Project hero visual" class="w-full h-auto object-cover">
+                <!-- Swap <img> for <video controls> if the hero is a video -->
+            </div>
+        </section>
+        <p class="text-sm text-center dark:text-[#edf2fb] text-[#001233] opacity-60 mb-16">
+            Caption describing the hero visual.
+        </p>
+
+        <!-- Text Box -->
+        <section class="mb-16">
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <h2 class="text-2xl font-semibold mb-4 dark:text-[#edf2fb] text-[#001233]">Section Subheading</h2>
+
+                <p class="text-justify dark:text-[#edf2fb] text-[#001233] mb-6">
+                    A paragraph describing the approach, motivation, or context for this part of the project.
+                    Replace with the actual write-up once ready.
+                </p>
+
+                <ul class="list-disc list-inside space-y-2 mb-6 dark:text-[#edf2fb] text-[#001233]">
+                    <li>First unordered point — e.g. a design constraint or key feature.</li>
+                    <li>Second unordered point.</li>
+                    <li>Third unordered point.</li>
+                </ul>
+
+                <ol class="list-decimal list-inside space-y-2 dark:text-[#edf2fb] text-[#001233]">
+                    <li>First step or ordered stage of the process.</li>
+                    <li>Second step.</li>
+                    <li>Third step.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Second Visual -->
+        <section class="mb-4">
+            <h2 class="text-2xl font-semibold mb-4 dark:text-[#edf2fb] text-[#001233]">Second Visual Subheading</h2>
+            <div class="rounded-2xl overflow-hidden border border-[#03045e] dark:border-[#caf0f8]">
+                <img src="../assets/project-visual2-placeholder.jpg" alt="Secondary project visual" class="w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- External Link Button -->
+        <section class="mb-20 flex justify-center">
+            <a href="#" target="_blank" rel="noopener"
+               class="px-8 py-3 rounded-lg font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">
+                View Full Write-Up / Repository
+            </a>
+        </section>
+
+        <!-- Prev / Next / Back to Portfolio -->
+        <section class="mb-16 flex flex-col items-center gap-4">
+            <div class="flex items-center gap-8">
+                <a href="project-previous.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                    <i class="fa-solid fa-arrow-left"></i> Previous Project
+                </a>
+                <a href="project-next.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                    Next Project <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <a href="../portfolio.html" class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-70 hover:opacity-100 underline transition">
+                Back to Portfolio
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-12 border-t text-center text-sm">
+            <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="../site.js"></script>
+</body>
+</html>

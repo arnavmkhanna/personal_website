@@ -22,7 +22,9 @@
         canvas { position: fixed; top:0; left:0; z-index: -1; }
         .content { position: relative; z-index: 10; }
         .modal { animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; } o { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeOut { from { opacity: 1; } to { opacity: 0; } }
+        .modal-closing { animation: fadeOut 0.25s ease forwards; }
         
         /* Custom scrollbar — light and dark mode aware */
         /* Firefox */
@@ -91,7 +93,7 @@
                 <h1 class="text-6xl md:text-7xl font-bold leading-tight font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">
                     <i id="decode-hey" class="">Hey!</i> I'm <span class="text-[#0077B6] dark:text-[#00B4D8]" id="decode-name"><b>Arnav</b></span>.
                 </h1>
-                <p class="mt-3 text-lg text-bold text-justify dark:text-[#edf2fb] text-[#001233]">I’m curious by nature, ambitious by choice, and a Cambridge engineer by training.<br>I like asking difficult questions, learning how things work, and making ideas real.</p>
+                <p class="mt-3 text-lg text-bold text-justify dark:text-[#edf2fb] text-[#001233]">I’m curious by nature, ambitious by choice, and a Cambridge engineer by training.<br>I ask difficult questions, learn how things work, and make ideas real.</p>
                 
                 <!-- Contact links -->
                 <div class="mt-5 flex flex-wrap gap-3">
@@ -214,11 +216,11 @@
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">The Knowledge Society</h3>
                         <p class="text-sm dark:text-[#edf2fb] text-[#001233]">2023-2024 • Innovate</p>
                     </div>
-                    <img src="assets/tks-logo1.png" alt="TKS" class="w-20 h-20 object-contain flex-shrink-0">
+                    <img src="assets/tks-logo.png" alt="TKS" class="w-20 h-20 object-contain flex-shrink-0">
                 </div>
                 <template id="modal-tks">
                     <h2 class="dark:text-[#edf2fb] text-[#001233] text-3xl font-bold mb-4">The Knowledge Society
-                        <img src="assets/tks-logo1.png" alt="TKS" class="inline ml-2 w-10 h-10 object-contain flex-shrink-0">
+                        <img src="assets/tks-logo.png" alt="TKS" class="inline ml-2 w-10 h-10 object-contain flex-shrink-0">
                     </h2>
                     <ul class="text-justify space-y-2">
                         <li class="flex gap-2">
@@ -309,15 +311,11 @@
                     <ul class="text-justify space-y-2">
                         <li class="flex gap-2">
                             <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
-                            <span class="text-lg">Member of the <b>Zambian National Robotics Team</b> in various annual FIRST Global Challenge competitions.</span>
-                        </li>
-                        <li class="flex gap-2">
-                            <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
                             <span class="text-lg">FIRST Global Challenge is called the '<b>Olympics of Robotics</b>', bringing together the brightest youth from over 190 countries to compete and collaborate under the banner of STEM by designing the best robots to complete a series of tasks and challenges.</span>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
-                            <span class="text-lg">I was the youngest-ever member of Team Zambia in 2018 (Mexico City), a Core Member in 2019 (Dubai), and the <b>Deputy Captain</b> in 2022 (Geneva), where we ranked in the top 50.</span>
+                            <span class="text-lg">Member of the <b>Zambian National Robotics Team</b> in various annual FIRST Global Challenge competitions. I was the youngest-ever member of Team Zambia in 2018 (Mexico City), a Core Member in 2019 (Dubai), and the <b>Deputy Captain</b> in 2022 (Geneva), where we ranked in the top 50.</span>
                         </li>
                         <li class="flex gap-2">
                             <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
@@ -751,6 +749,6 @@
         </div>
     </div>
 
-    <script src="index_script.js"></script>
+    <script src="site.js"></script>
 </body>
 </html>

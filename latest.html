@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" type="image/png" href="assets/profile-photo2.png">
     <title>Latest; Arnav Khanna</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -67,13 +73,13 @@
 
         <!-- Latest Hero -->
         <section class="mb-16">
-            <h1 class="text-5xl dark:text-[#edf2fb] text-[#001233] md:text-6xl font-bold leading-tight mb-6">Latest <span class="text-[#0077B6] dark:text-[#00B4D8]">Updates</span>.</h1>
+            <h1 class="text-5xl dark:text-[#edf2fb] text-[#001233] md:text-6xl font-bold font-['Space_Grotesk'] leading-tight mb-6">Latest <span class="text-[#0077B6] dark:text-[#00B4D8]">Updates</span>.</h1>
             <p class="text-xl dark:text-[#edf2fb] text-[#001233] max-w-1xl">
-                Check out my latest writing, projects, and updates, wherever they live!
+                Check out my latest articles, blogs, updates, and deep dives, wherever they live!
             </p>
         </section>
 
-        <!-- Entries -->
+        <!-- ================= ENTRIES ================= -->
         <section class="mb-20">
             <div class="flex flex-col gap-6">
 
@@ -94,17 +100,91 @@
                     </div>
 
                     <!-- Title & Summary -->
-                    <div class="flex-1 flex flex-col">
+                    <div class="flex-1 flex flex-col justify-center">
                         <!-- <p class="text-sm text-gray-500 mb-1">Jan 1, 2026 · Substack</p> -->
-                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">A personal website, a new project, and a return.</h3>
-                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] justify-center">
-                            I return to my TKS-era blog with a new post. In this post, I talk about building this personal website, life at Cambridge University, and my experience with two recent personal projects.
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">A personal website, a new project, and a return</h3>
+                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] text-justify justify-center">
+                            I return to my TKS-era blog with a new entry. In it, I talk about the process of building this personal website, an overview of life at Cambridge University, and my experience with two recent Cambridge coursework projects: the Mars Lander and the Structural Design Challenge.
+                        </p>
+                        <span class="text-[#007bff] font-medium text-sm">Read blog →</span>
+                    </div>
+                </a>
+                
+                <!-- ============ SANAVO MEDIUM ============ -->
+                <a href="#" target="_blank" rel="noopener"
+                   class="entry-card flex gap-6 p-4 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.00] transition bg-[#f8f9fb] dark:bg-[#000814]">
+
+                    <!-- Thumbnail / date square -->
+                    <div class="w-32 h-32 flex-shrink-0">
+                        <div class="entry-thumb">
+                            <img src="assets/sanavomedium.webp" alt="Sanavo Thumbnail">
+                            <div class="entry-overlay bg-black/70 text-white">
+                                <i class="fa-brands fa-medium text-2xl"></i>
+                                <span class="text-sm font-medium">May 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title & Summary -->
+                    <div class="flex-1 flex flex-col justify-center">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">Sanavo: Ending the Death Sentence of Glioblastoma</h3>
+                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] text-justify justify-center">
+                            A deep technical dive into Sanavo, an two-part idea to vastly improve treatment of glioblastoma (brain cancer) via improved chemotherapy drug delivery and a bio-sensor to detect recurrence early. 
+                            Co-written with Mark and Natan (see the Sanavo project in my portfolio for more details).
                         </p>
                         <span class="text-[#007bff] font-medium text-sm">Read article →</span>
                     </div>
                 </a>
-                <!-- ================= END ENTRY 1 ================= -->
 
+                <!-- ============ KILIMANJARO LINKEDIN ============ -->
+                <a href="#" target="_blank" rel="noopener"
+                   class="entry-card flex gap-6 p-4 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.00] transition bg-[#f8f9fb] dark:bg-[#000814]">
+
+                    <!-- Thumbnail / date square -->
+                    <div class="w-32 h-32 flex-shrink-0">
+                        <div class="entry-thumb">
+                            <img src="assets/kilimanjaro.jpg" alt="Kilimanjaro Thumbnail">
+                            <div class="entry-overlay bg-black/70 text-white">
+                                <i class="fa-brands fa-linkedin text-2xl"></i>
+                                <span class="text-sm font-medium">February 2024</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title & Summary -->
+                    <div class="flex-1 flex flex-col justify-center">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">Turning 18 on the Slopes of Mt Kilimanjaro</h3>
+                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] text-justify justify-center">
+                            Two days after my 18th birthday, just after sunrise, I reached Uhuru Peak, the 5,895m high summit of Mt Kilimanjaro, the highest on the African continent. This post dives into my experiences and reflections during the climb.
+                        </p>
+                        <span class="text-[#007bff] font-medium text-sm">Read post →</span>
+                    </div>
+                </a>
+
+                <!-- ============ CAPS NETS MEDIUM ============ -->
+                <a href="#" target="_blank" rel="noopener"
+                   class="entry-card flex gap-6 p-4 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.00] transition bg-[#f8f9fb] dark:bg-[#000814]">
+
+                    <!-- Thumbnail / date square -->
+                    <div class="w-32 h-32 flex-shrink-0">
+                        <div class="entry-thumb">
+                            <img src="assets/capsnet.webp" alt="CapsNet Thumbnail">
+                            <div class="entry-overlay bg-black/70 text-white">
+                                <i class="fa-brands fa-medium text-2xl"></i>
+                                <span class="text-sm font-medium">November 2023</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Title & Summary -->
+                    <div class="flex-1 flex flex-col justify-center">
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] font-bold mb-1">Capsule Neural Networks: Giving 20/20 Vision to Artificial Intelligence</h3>
+                        <p class="mb-2 dark:text-[#edf2fb] text-[#001233] text-justify justify-center">
+                            An analysis of the weaknesses in the most widespread type of computer vision algorithm, the Convolutional Neural Network; and an explanation + analysis of the strengths of a more complex alternative, the Capsule Neural Network.
+                        </p>
+                        <span class="text-[#007bff] font-medium text-sm">Read article →</span>
+                    </div>
+                </a>
             </div>
         </section>
 

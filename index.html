@@ -22,7 +22,7 @@
         canvas { position: fixed; top:0; left:0; z-index: -1; }
         .content { position: relative; z-index: 10; }
         .modal { animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeIn { from { opacity: 0; } o { opacity: 1; } }
     </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
@@ -48,7 +48,7 @@
             <a href="contact.html" class="px-5 py-2.5 rounded-full font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">Get In Touch</a>
         </nav>
 
-        <!-- Hero -->
+        <!-- ============ HERO ============ -->
         <div class="flex flex-col md:flex-row gap-12 items-center mb-20">
             <!-- Circular Photo -->
             <div class="flex-shrink-0">
@@ -58,12 +58,12 @@
 
             <div class="flex-1">
                 <h1 class="text-6xl md:text-7xl font-bold leading-tight font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">
-                    <i id="decode-hey" class="">Hey!</i> I'm <span class="text-[#0077B6] font-bold font-['Space_Grotesk'] dark:text-[#00B4D8]" id="decode-name"><b>Arnav</b></span>.
+                    <i id="decode-hey" class="">Hey!</i> I'm <span class="text-[#0077B6] dark:text-[#00B4D8]" id="decode-name"><b>Arnav</b></span>.
                 </h1>
-                <p class="mt-3 text-xl dark:text-[#edf2fb] text-[#001233]">I'm a Cambridge engineering student working towards building the future.</p>
+                <p class="mt-3 text-lg text-bold text-justify dark:text-[#edf2fb] text-[#001233]">I’m curious by nature, ambitious by choice, and a Cambrige engineer by training.<br>I like asking difficult questions, learning how things work, and making ideas real.</p>
                 
                 <!-- Contact links -->
-                <div class="mt-10 flex flex-wrap gap-3">
+                <div class="mt-5 flex flex-wrap gap-3">
                     <a href="https://www.linkedin.com/in/arnavmkhanna" target="_blank" rel="noopener"
                     class="w-12 h-12 flex items-center justify-center hover:bg-[#f8f9fb] dark:hover:bg-[#000814] hover:border-[#03045e] dark:hover:border-[#caf0f8] rounded-xl bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 text-xl hover:scale-110 transition">
                         <i class="fa-brands fa-linkedin-in"></i>
@@ -107,11 +107,11 @@
             </div>
         </div>
 
-        <!-- Experience & Education -->
+        <!-- ============ PROFESSIONAL BACKGROUND ============ -->
         <section class="mb-20">
-            <h2 class="text-3xl font-semibold mb-8 dark:text-[#edf2fb] text-[#001233]">Professional Background</h2>
+            <h2 class="text-3xl font-semibold mb-8 dark:text-[#edf2fb] font-['Space_Grotesk'] text-[#001233]">Professional Background</h2>
             <div class="grid md:grid-cols-2 gap-6">
-                <!-- Cambridge modal -->
+                <!-- ============ CAMBRIDGE UNIVERSITY ============ -->
                 <div onclick="openModal('cambridge')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition transition flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">University of Cambridge</h3>
@@ -144,7 +144,7 @@
                     </ul>
                 </template>
 
-                <!-- IIT modal -->
+                <!-- ============ IIT ============ -->
                 <div onclick="openModal('iit')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Indian Institute of Technology</h3>
@@ -177,7 +177,7 @@
                     </ul>
                 </template>
 
-                <!-- TKS modal -->
+                <!-- ============ TKS ============ -->
                 <div onclick="openModal('tks')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">The Knowledge Society</h3>
@@ -216,7 +216,7 @@
                     </ul>
                 </template>
                 
-                <!-- ISL modal -->
+                <!-- ============ ISL ============ -->
                 <div onclick="openModal('isl')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">International School of Lusaka</h3>
@@ -263,7 +263,7 @@
                     </ul>
                 </template>
 
-                <!-- FGC modal -->
+                <!-- ============ FIRST GLOBAL ============ -->
                 <div onclick="openModal('fgc')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition  flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">FIRST Global Challenge</h3>
@@ -297,12 +297,400 @@
             </div>
         </section>
 
-        <!-- Featured Content, Projects & News, Other Side Quests -->
-        <!-- Add similar sections as needed. Example: -->
+        <!-- ============ FEATURED CONTENT SCROLL ============ -->
         <section class="mb-20">
-            <h2 class="text-3xl font-semibold mb-8 dark:text-[#edf2fb] text-[#001233]">Featured</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project cards with onclick to open modals -->
+            <h2 class="text-3xl font-semibold mb-8 font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">Featured</h2>
+
+            <div class="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory" style="scrollbar-width: thin;">
+
+                <a href="project-f1.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="assets/featured-f1.gif" alt="F1 Optimal Lap" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">Optimal Formula 1 Lap</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Simulating the fastest possible lap using vehicle dynamics.</p>
+                    </div>
+                </a>
+
+                <a href="project-sanavo.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="assets/featured-sanavo.gif" alt="Sanavo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">Sanavo</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">A drug delivery system fighting glioblastoma.</p>
+                    </div>
+                </a>
+
+                <a href="project-structural-design.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="assets/featured-structural.gif" alt="Structural Design Project" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">Structural Design Project</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Designing and testing an Aluminium cantilever truss.</p>
+                    </div>
+                </a>
+
+                <a href="project-magnetometer.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="assets/featured-magnetometer.gif" alt="Magnetometer Circuit" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">Analogue Magnetometer Circuit</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Measuring and displaying magnetic field strength with LEDs.</p>
+                    </div>
+                </a>
+
+                <a href="portfolio.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img src="assets/featured-more.gif" alt="More Projects" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">More Projects</h3>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">See the full portfolio for everything else I've built.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ============ SIDE QUESTS ============ -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-semibold mb-8 font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">Other Side Quests</h2>
+
+            <div class="rounded-2xl border border-[#03045e] dark:border-[#caf0f8] bg-[#f8f9fb] dark:bg-[#000814] p-8">
+                <div>
+                    <!-- ============ ABSA HALF 2025 ============ -->
+                    <div class="flex gap-2">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">September 2025</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Lusaka Absa Marathon</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed my first half-marathon with Lusaka's biggest run, with a time of 2h19m.</p>
+                        </div>
+                    </div>
+                    <!-- ============ KK 10K ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2024</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Lusaka Kenneth Kaunda (KK) Marathon</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed my first 10K run with a time of 1h5m, on the 100th anniversary of Kenneth Kaunda (Zambia's first president).</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ KILIMANJARO ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">February 2024</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Mt Kilimanjaro</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Climbed Mt Kilimanjaro, one of the Seven Summits and the tallest free-standing mountain, during my 18th birthday over the course of 7 days.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ RISE EQUITECH ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">August 2023</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Equitech Futures</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed the "AI and Social Impact for RISE Finalists" course from Equitech Futures.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ IB DISTINCTION ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">July 2023</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">International Baccalaureate</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded an IB Diploma with Distinction, with a total of 43/45.</p>
+                        </div>
+                    </div>
+                    <!-- ============ ISL HEAD OF SCHOOL ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">June 2023</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">International School of Lusaka Graduation</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Graduated ISL with the Head of School award (equivalent to Valedictorian), and voted Prom King.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ SCHOOLHOUSE ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2022</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">schoolhouse.world</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as an online SAT tutor at the request of schoolhouse.world.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ RISE ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2022</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Rise For the World</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Became one of 500 RISE Global Finalists globally.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ DOFE GOLD ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2022</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Silver</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed all requirements for the DofE Gold Award, but qualified for Silver due to age requirements.</p>
+                        </div>
+                    </div>
+                    <!-- ============ DOFE SILVER ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2020</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Bronze Award</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded the DofE Bronze Award.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ VIRTUOSO ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">March 2021</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Piano Virtuoso Competition</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded second in the Virtuoso Zambia classical music competition.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ AI50 ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">January 2021</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50AI</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Proffessional Certificate in Computer Science & Artificial Intelligence.</p>
+                        </div>
+                    </div>
+                    <!-- ============ CS50 ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50x</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Introduction to Computer Science.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ IGCSE ICE ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">June 2020 - July 2021</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Cambridge IGCSE & ICE certificate</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed the two-year-long International GCSE as a homeschooled candidate in a single year. Achieved ICE distinction with 8 A*.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ MUVI TV ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">July 2019 - January 2020</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Muvi Television Anchor</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as anchor of the weekly children's show, Kids & Teens Bloc.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ KARATE ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Kyokushin Kenbukaikan (Karate)</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">4th Kyu (Dark Green Belt; one below Brown) certification.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ WSC YALE ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">November 2019</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Tournament of Champions Round</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Participated in the WSC's Tournament of Champions at Yale University, USA.</p>
+                        </div>
+                    </div>
+                    <!-- ============ WSC DURBAN ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">September 2019</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Global Round</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked in the top 10 teams globally in the WSC's global round in Durban, South Africa.</p>
+                        </div>
+                    </div>
+                    <!-- ============ WSC LUSAKA ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">February 2019</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Regional Round</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked #1 team in the WSC's regional round in Lusaka, Zambia.</p>
+                        </div>
+                    </div>
+
+                    <!-- ============ ABRSM GUITAR ============ -->
+                    <div class="flex gap-2 mt-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Guitar</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 7.</p>
+                        </div>
+                    </div>
+                    <!-- ============ ABRSM PIANO ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Piano</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 5.</p>
+                        </div>
+                    </div>
+                    <!-- ============ ABRSM THEORY ============ -->
+                    <div class="flex gap-2 mt-1">
+                        <div class="flex flex-col items-center">
+                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                        </div>
+                        <div class="pb-2">
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Music Theory</h4>
+                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 6.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ LANGUAGES ============ -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-semibold font-['Space_Grotesk'] mb-8 dark:text-[#edf2fb] text-[#001233]">Languages</h2>
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <div class="flex flex-wrap justify-center gap-x-12 gap-y-8">
+
+                    <!-- ============ ENGLISH ============ -->
+                    <div class="flex flex-col items-center w-24">
+                        <p class="font-semibold mb-2 dark:text-[#edf2fb] text-xl text-[#001233]">English</p>
+                        <div class="flex gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                        </div>
+                    </div>
+
+                    <!-- ============ SPANISH ============ -->
+                    <div class="flex flex-col items-center w-24">
+                        <p class="font-semibold mb-2 dark:text-[#edf2fb] text-xl text-[#001233]">Spanish</p>
+                        <div class="flex gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full border-2 border-[#0077B6] dark:border-[#00B4D8]"></span>
+                        </div>
+                    </div>
+
+                    <!-- ============ FRENCH ============ -->
+                    <div class="flex flex-col items-center w-24">
+                        <p class="font-semibold mb-2 dark:text-[#edf2fb] text-xl text-[#001233]">French</p>
+                        <div class="flex gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full border-2 border-[#0077B6] dark:border-[#00B4D8]"></span>
+                        </div>
+                    </div>
+
+                    <!-- ============ GERMAN ============ -->
+                    <div class="flex flex-col items-center w-24">
+                        <p class="font-semibold mb-2 dark:text-[#edf2fb] text-xl text-[#001233]">German</p>
+                        <div class="flex gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full border-2 border-[#0077B6] dark:border-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full border-2 border-[#0077B6] dark:border-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full border-2 border-[#0077B6] dark:border-[#00B4D8]"></span>
+                        </div>
+                    </div>
+
+                    <!-- ============ HINDI ============ -->
+                    <div class="flex flex-col items-center w-24">
+                        <p class="font-semibold mb-2 dark:text-[#edf2fb] text-xl text-[#001233]">Hindi</p>
+                        <div class="flex gap-2">
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                            <span class="w-3.5 h-3.5 rounded-full bg-[#0077B6] dark:bg-[#00B4D8]"></span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
@@ -310,9 +698,9 @@
         <footer class="pt-12 border-t text-center text-sm text-gray-500">
             <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
         </footer>
-    </div>
+    </div>    
 
-    <!-- Modal -->
+    <!-- ============ MODALS ============ -->
     <div id="modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
         <div class="bg-white dark:bg-zinc-900 rounded-3xl border border-[#03045e] dark:border-[#caf0f8] max-w-4xl w-full max-h-[90vh] overflow-auto modal">
             <div class="p-8">

@@ -5,27 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" type="image/png" href="../assets/profile-photo2.png">
-    <title>Project Title — Arnav Khanna</title>
+    <title>Sanavo; Arnav Khanna</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
-    <script>
-        // Must run before the Tailwind CDN script loads, so dark mode is
-        // class-driven from the very first paint (avoids the light-mode flash).
-        tailwind.config = {
-            darkMode: 'class'
-        };
-        (function() {
-            const saved = localStorage.getItem('theme');
-            const isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
-            if (isDark) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                document.documentElement.classList.add('dark');
-            }
-        })();
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -70,76 +55,183 @@
 
         <!-- Project Header -->
         <section class="mb-12">
-            <h1 class="text-5xl md:text-6xl font-bold font-['Space_Grotesk'] leading-tight mb-3 dark:text-[#edf2fb] text-[#001233]">
-                Project Title
+            <h1 class="text-5xl md:text-6xl font-bold font-['Space_Grotesk'] leading-tight mb-3 text-[#0077B6] dark:text-[#00B4D8]">
+                Sanavo
             </h1>
-            <p class="text-lg dark:text-[#edf2fb] text-[#001233] opacity-70">
-                Independent Project <!-- or e.g. "In collaboration with Cambridge Engineering" -->
+            <p class="text-xl font-semibold dark:text-[#edf2fb] text-[#001233]">
+                Moonshot Project to improve Brain Cancer Treatment (associated with TKS).
             </p>
         </section>
 
-        <!-- Hero Visual -->
+        <!-- Previous/Next links -->
+        <section class="mb-12 grid grid-cols-2 items-center">
+            <a href="rollercoaster.html" class="justify-self-start flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                <i class="fa-solid fa-arrow-left"></i> Previous Project
+            <!-- </a>
+            <a href="project-next.html" class="justify-self-end flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                Next Project <i class="fa-solid fa-arrow-right"></i>
+            </a> -->
+        </section>
+
+        <!-- Website Animation -->
         <section class="mb-4">
             <div class="rounded-2xl overflow-hidden border border-[#03045e] dark:border-[#caf0f8]">
-                <img src="../assets/project-hero-placeholder.jpg" alt="Project hero visual" class="w-full h-auto object-cover">
+                <img src="../assets/sanavo.png" alt="Sanavo Website Homepage" class="w-full h-auto object-cover">
                 <!-- Swap <img> for <video controls> if the hero is a video -->
             </div>
         </section>
-        <p class="text-sm text-center dark:text-[#edf2fb] text-[#001233] opacity-60 mb-16">
-            Caption describing the hero visual.
+        <p class="text-sm text-center dark:text-[#edf2fb] text-[#001233] opacity-80 mb-1">
+            The Sanavo <a href="https://sanavo.netlify.app/" style="color: #007bff;" class="underline">Website</a>
         </p>
 
-        <!-- Text Box -->
+        <!-- Context & Problem -->
+        <h2 class="text-3xl font-semibold mb-8 font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">Context & Problem</h2>
         <section class="mb-16">
             <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
-                <h2 class="text-2xl font-semibold mb-4 dark:text-[#edf2fb] text-[#001233]">Section Subheading</h2>
-
-                <p class="text-justify dark:text-[#edf2fb] text-[#001233] mb-6">
-                    A paragraph describing the approach, motivation, or context for this part of the project.
-                    Replace with the actual write-up once ready.
+                <p class="text-justify dark:text-[#edf2fb] text-[#001233] text-lg mb-6">
+                    A moonshot project is an ambitious, exploratory, and often groundbreaking project that seeks to tackle a huge global problem with a radical, sometimes fantastical, solution.
+                    At TKS, the capstone project is the global Moonshot Competition: an attempt to use the various skills we had learned to tackle real-world problems - problems that affected humanity and its communities as a whole, not challenges faced by large businesses such as Microsoft or Google.
                 </p>
 
-                <ul class="list-disc list-inside space-y-2 mb-6 dark:text-[#edf2fb] text-[#001233]">
-                    <li>First unordered point — e.g. a design constraint or key feature.</li>
-                    <li>Second unordered point.</li>
-                    <li>Third unordered point.</li>
-                </ul>
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    My team, <a href="https://www.linkedin.com/in/mark-daniel-leupold/" style="color: #007bff;" class="underline">Mark</a>, <a href="https://www.linkedin.com/in/natan-kramskiy-1a3999294/" style="color: #007bff;" class="underline">Natan</a>, and I, approached this task with a simple question:
+                    what was the MOST deadly disease, and how could we solve it? That's how we came up with <b>Sanavo</b>. We narrowed into glioblastoma, the most deadly of the brain cancers, which are one of the worst types of cancers overall. As for the word Sanavo, it's derived from the Latin verb "Sanare", meaning "to heal".
+                </p>
 
-                <ol class="list-decimal list-inside space-y-2 dark:text-[#edf2fb] text-[#001233]">
-                    <li>First step or ordered stage of the process.</li>
-                    <li>Second step.</li>
-                    <li>Third step.</li>
-                </ol>
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    Glioblastoma, is, in essence, a death sentence. 95% of patients die within 5 years of diagnosis: current treatments are ineffective. While surgery is often useful to remove large portions of a tumour, around 3% of cancer cells remain post-operation. This is normal and expected; a surgeon can only do so much in the delicate
+                    tissues of the brain, and the remaining cancer cells are often indistinguishable from normal cells. Think of mixing two different colours of play-doh and then trying to remove one with a knife - some portions will remain.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233]">
+                    However, post-surgery treaments, namely chemotherapy and radiotherapy, are ineffective, side-effect heavy, and expensive. Tumour regrowth occurs fast and in a vast majority of cases. The main reason is the Blood Brain Barrier: a membrane that physically separates fluid in the brain from blood vessels.
+                    We evolved with these structures to protect the brain from toxins in the blood, but chemotherapy drugs are also inadvertently blocked from entering the brain and attacking the tumour. Furthermore, since chemotherapy drugs such as TMZ work by targeting cells with high rates of division (such as cancer cells),
+                    other cells which are naturally fast-replicating also suffer. These include intestine and mouth lining, and famously hair cells. As for radiotherapy, it has its own host of side effects: headaches, nausea, vomiting, hearing loss, seizures, and more.
+                </p>
             </div>
         </section>
 
-        <!-- Second Visual -->
+        <!-- Hyaluronic Acid Hydrogel -->
         <section class="mb-4">
-            <h2 class="text-2xl font-semibold mb-4 dark:text-[#edf2fb] text-[#001233]">Second Visual Subheading</h2>
-            <div class="rounded-2xl overflow-hidden border border-[#03045e] dark:border-[#caf0f8]">
-                <img src="../assets/project-visual2-placeholder.jpg" alt="Secondary project visual" class="w-full h-auto object-cover">
+            <div class="rounded-2xl flex justify-center overflow-hidden">
+                <img src="../assets/sanavomedium.webp" alt="Hyaluronic Acid Hydrogel" class="w-[30rem] h-[30rem] object-cover">
+            </div>
+        </section>
+        <p class="text-sm text-center dark:text-[#edf2fb] text-[#001233] opacity-80 mb-12">
+            Diagram of Hydrogel Drug Carrier.
+        </p>
+
+        <!-- Context & Problem -->
+        <h2 class="text-3xl font-semibold mb-8 font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">Solution 1: Hydrogel Carrier attached to Red Blood Cells</h2>
+        <section class="mb-16">
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <p class="text-justify dark:text-[#edf2fb] text-[#001233] text-lg mb-6">
+                    The problem with glioblastoma treatment isn't the ineffiency of the drugs: it's getting the drugs to the cancer site, and that's where our solution steps in.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-2">
+                    By diving into and combining several cutting-edge research topics, we ideated the Hyaluronic Acid hydrogel as an ideal drug carrier molecule. Its benefits include:
+                </p>
+                <ul class="text-justify space-y-2 mb-6">
+                    <li class="flex gap-2">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                        <span>Hydrophilic i.e. highly biocompatible, biodegradable, and high loading capacity.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                        <span>Small (can cross the Blood-Brain Barrier easily), versatile.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                        <span>Can protect molecules from degradation by enzymes.</span>
+                    </li>
+                    <li class="flex gap-2">
+                        <span class="text-[#0077B6] dark:text-[#00B4D8] font-bold">•</span>
+                        <span class="font-semibold">High affinity to the CD44 receptor, which is often over-expressed in cancer cells.</span>
+                    </li>
+                </ul>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    These factors together make Hyaluronic acid the ideal drug carrier, one which is non-toxic, has a high capacity, programmed to release near cancer cells, and can safely bio-degrade after releasing its cargo.
+                    In the diagram above, the blue particles represent the cargo (chemotherapy drugs, likely TMZ) and the antibody-like attachments are HA6 monosaccharide units, which can bind to cancer cells' CD44 receptors.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233]">
+                    However, while hydrogels can naturally cross the Blood Brain Barrier, this process is slow and unlikely. Here, we took advantage of one of the best natural carriers in our body: the Red Blood Cells, which cross the Barrier regularly to deliver oxygen.
+                    This process is known as <i>Red Blood Cell hitchhiking</i>. The drug-laced nanogels bind to Red Blood Cells <i>ex vivo</i>, and then injected into the spinal bloodstream, which delivers blood directly into the brain.
+                    The RBCs carry the hydrogel past the Blood Brain Barrier, the hydrogels bind to cancer cells and release their cargo, thus reducing side effects and improving treatment efficacy.
+                </p>
+            </div>
+        </section>
+
+        <!-- Bio-Sensor -->
+        <section class="mb-4">
+            <div class="rounded-2xl flex justify-center overflow-hidden">
+                <img src="../assets/sanavo3.png" alt="PLGA Bio-Sensor" class="w-[30rem] h-[30rem] object-cover">
+            </div>
+        </section>
+        <p class="text-sm text-center dark:text-[#edf2fb] text-[#001233] opacity-80 mb-12">
+            Diagram of Bio-Sensor.
+        </p>
+
+        <!-- Context & Problem -->
+        <h2 class="text-3xl font-semibold mb-8 font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">Solution 2: PLGA Bio-Sensor to combat Tumor Recurrence</h2>
+        <section class="mb-16">
+            <div class="bg-[#f8f9fb] dark:bg-[#000814] p-8 rounded-2xl border border-[#03045e] dark:border-[#caf0f8]">
+                <p class="text-justify dark:text-[#edf2fb] text-[#001233] text-lg mb-6">
+                    The final challenge with glioblastoma is its extremely high rate of recurrence, with almost 100% of patients experiencing various levels of tumour regrowth after all types of treatments.
+                    Furthermore, current imaging techniques, such as ultrasound, X-Ray, CT, MRI, and PET scans often struggle with specificity and sensitivity, which makes timely treatment difficult.
+                    Thus, we developed a Poly(lactic-co-glycolic acid) (PLGA) biosensor as the second part of our solution.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    The delivery of our new molecule is the same as above: Red Blood Cell hitchhiking inside a nanogel. This copies the same advantages: biocompatibility, biodegradability, ability to cross the Blood Brain Barrier,
+                    and targeted release near cancer cells specifically.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    The chemistry of our new molecule is as follows: within the PLGA core lies Glucose Oxidase, which reacts to the excessive glucose present near cancer cells. This generates hydrogen peroxide,
+                    which activates Cy7, a fluorophore molecule also contained within the PLGA core. The activated Cy7 has increased fluorescence which can be picked up very accurately with a NIR (Near Infrared) scan of the brain.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233] mb-6">
+                    The image above depicts PLGA nanogels binding to the CD47 proteins on Red Blood Cells. This sends a "don't eat me" signal that temporarily stops macrophages removing the Red Blood Cells from circulation.
+                </p>
+
+                <p class="text-justify dark:text-[#edf2fb] text-lg text-[#001233]">
+                    This improved imaging technique allows doctors to notice tumour recurrence earlier and start treatment earlier. Combined with our more effective drug delivery system, this could greatly improve treatment efficacy,
+                    reduce side effects, and reduce costs. To know more about how this method would be cheaper, or to go far deeper into the technical explanation, or to understand the competition in this industry, check out the links below.
+                </p>
             </div>
         </section>
 
         <!-- External Link Button -->
-        <section class="mb-20 flex justify-center">
-            <a href="#" target="_blank" rel="noopener"
-               class="px-8 py-3 rounded-lg font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">
-                View Full Write-Up / Repository
+        <section class="mb-20 grid grid-cols-3 items-center">
+            <a href="https://docs.google.com/presentation/d/1m1qSTDy93vbFWBmsNhdR-38uihSdarI4lG3vK28pmzI/edit?usp=sharing" target="_blank" rel="noopener"
+            class="justify-self-start px-8 py-3 rounded-lg font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">
+                View Presentation Deck
+            </a>
+            <a href="https://sanavo.netlify.app/" target="_blank" rel="noopener"
+            class="justify-self-center px-8 py-3 rounded-lg font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">
+                View Sanavo Website
+            </a>
+            <a href="https://arnavmkhanna.medium.com/sanavo-ending-the-death-sentence-of-glioblastoma-brain-canc-8dca54c326c5" target="_blank" rel="noopener"
+            class="justify-self-end px-8 py-3 rounded-lg font-medium bg-[#001233] dark:bg-[#edf2fb] text-white dark:text-zinc-900 hover:scale-105 transition">
+                View Full Article
             </a>
         </section>
 
         <!-- Prev / Next / Back to Portfolio -->
         <section class="mb-16 flex flex-col items-center gap-4">
             <div class="flex items-center gap-8">
-                <a href="project-previous.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                <a href="rollercoaster.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
                     <i class="fa-solid fa-arrow-left"></i> Previous Project
                 </a>
-                <a href="project-next.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                <!-- <a href="project-next.html" class="flex items-center gap-2 dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
                     Next Project <i class="fa-solid fa-arrow-right"></i>
-                </a>
+                </a> -->
             </div>
-            <a href="../portfolio.html" class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-70 hover:opacity-100 underline transition">
+            <a href="../portfolio.html" class="dark:text-[#edf2fb] text-[#001233] hover:opacity-100 underline transition">
                 Back to Portfolio
             </a>
         </section>

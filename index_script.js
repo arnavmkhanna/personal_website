@@ -188,6 +188,26 @@ function initHeadlineDecode() {
     if (nameEl) scrambleReveal(nameEl, 'Arnav', 200); // starts slightly after "Hey!"
 }
 
+// === Side Quests expand/collapse ===
+function toggleSideQuests() {
+    const content = document.getElementById('sidequests-more');
+    const text = document.getElementById('sidequests-toggle-text');
+    const icon = document.getElementById('sidequests-toggle-icon');
+    const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+    if (isExpanded) {
+        content.style.maxHeight = '0px';
+        text.textContent = 'Read More';
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+    } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        text.textContent = 'Read Less';
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+    }
+}
+
 // === Initialize everything, in order ===
 initTheme();
 initBackground();

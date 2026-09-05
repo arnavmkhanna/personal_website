@@ -19,6 +19,37 @@
         .content { position: relative; z-index: 10; }
         .modal { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Custom scrollbar — light and dark mode aware */
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #9ca3af #f8f9fb;
+        }
+        html.dark {
+            scrollbar-color: #4b5563 #000814;
+        }
+
+        /* Chrome, Edge, Safari (WebKit) */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9fb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #9ca3af;
+            border-radius: 9999px;
+            border: 2px solid #f8f9fb;
+        }
+        html.dark ::-webkit-scrollbar-track {
+            background: #000814;
+        }
+        html.dark ::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border: 2px solid #000814;
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
@@ -155,25 +186,39 @@
                              class="w-full h-full object-cover group-hover:scale-105 transition">
                     </div>
                     <div class="pl-6 pr-6 pb-3 pt-3">
-                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Pitching Modular Data Centres to Microsoft</h3>
+                        <h3 class="text-xl dark:text-[#edf2fb] text-[#001233] text-center font-semibold mb-1">Consulting for Microsoft</h3>
                         <p class="dark:text-[#edf2fb] text-[#001233] text-sm">
                             Ideated and pitched modular, sustainable, and low-cost data centres to Microsoft as part of a team consulting competition. Developed as a business case study during the very beginning of the AI era.
                         </p>
                     </div>
                 </div>
                 <template id="modal-example">
-                    <h2 class="text-3xl font-bold mb-4">Example Side Project</h2>
-                    <p>
-                        A short paragraph describing what this project is, what you built, and what you
-                        learned. Keep it to a few sentences since this is a quick modal, not a full page.
-                    </p>
+                    <h2 class="text-3xl font-bold mb-4">Consulting for Microsoft</h2>
+                    <ul class="text-justify space-y-2">
+                        <li class="flex gap-2">
+                            <span class="">As part of the Spring TKS Challenge in April 2024, our team tackled one of three business prompts, specifically from Microsoft.
+                                Our prompt was</span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span class=""><i><b>"As AI continues to grow and requires additional data centers, chip manufacturing, and energy usage – how can we sustainably continue the accelerated AI growth while saving our planet and optimizing costs?"</b></i></span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span>After weeks of research, stress-testing, and iterative improvement on multiple well-developed ideas, we settled on implementing Modular Data Centres (MDCs) instead of large traditional data centres.</span>
+                            </span>
+                        </li>
+                        <li class="flex gap-2">
+                            <span>Large traditional data centres hindered Microsoft's ability to grow rapidly at low-cost and their ability to expand into new regions and adapt to changing demands. We proposed plug-and-play</span>
+                            </span>
+                        </li>
+
+                    </ul>
                 </template>
 
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+        <footer class="pt-12 border-t text-center text-sm">
             <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
         </footer>
     </div>

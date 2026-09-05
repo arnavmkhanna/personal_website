@@ -23,6 +23,37 @@
         .content { position: relative; z-index: 10; }
         .modal { animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } o { opacity: 1; } }
+        
+        /* Custom scrollbar — light and dark mode aware */
+        /* Firefox */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #9ca3af #f8f9fb;
+        }
+        html.dark {
+            scrollbar-color: #4b5563 #000814;
+        }
+
+        /* Chrome, Edge, Safari (WebKit) */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9fb;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #9ca3af;
+            border-radius: 9999px;
+            border: 2px solid #f8f9fb;
+        }
+        html.dark ::-webkit-scrollbar-track {
+            background: #000814;
+        }
+        html.dark ::-webkit-scrollbar-thumb {
+            background-color: #4b5563;
+            border: 2px solid #000814;
+        }
     </style>
 </head>
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans">
@@ -60,7 +91,7 @@
                 <h1 class="text-6xl md:text-7xl font-bold leading-tight font-['Space_Grotesk'] dark:text-[#edf2fb] text-[#001233]">
                     <i id="decode-hey" class="">Hey!</i> I'm <span class="text-[#0077B6] dark:text-[#00B4D8]" id="decode-name"><b>Arnav</b></span>.
                 </h1>
-                <p class="mt-3 text-lg text-bold text-justify dark:text-[#edf2fb] text-[#001233]">I’m curious by nature, ambitious by choice, and a Cambrige engineer by training.<br>I like asking difficult questions, learning how things work, and making ideas real.</p>
+                <p class="mt-3 text-lg text-bold text-justify dark:text-[#edf2fb] text-[#001233]">I’m curious by nature, ambitious by choice, and a Cambridge engineer by training.<br>I like asking difficult questions, learning how things work, and making ideas real.</p>
                 
                 <!-- Contact links -->
                 <div class="mt-5 flex flex-wrap gap-3">
@@ -115,7 +146,7 @@
                 <div onclick="openModal('cambridge')" class="project-card bg-[#f8f9fb] dark:bg-[#000814] p-6 rounded-2xl border border-[#03045e] dark:border-[#caf0f8] cursor-pointer hover:scale-[1.03] transition transition flex items-center justify-between gap-4">
                     <div>
                         <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233]">University of Cambridge</h3>
-                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">Graduating Summer 2029 • Engineering</p>
+                        <p class="text-sm dark:text-[#edf2fb] text-[#001233]">Graduating Summer 2029 • Master's of Engineering</p>
                     </div>
                     <img src="assets/cambridge-logo.png" alt="University of Cambridge" class="w-20 h-20 object-contain flex-shrink-0">
                 </div>
@@ -343,16 +374,12 @@
                     </div>
                 </a>
 
-                <a href="portfolio.html" class="snap-start flex-shrink-0 w-72 block rounded-2xl border bg-[#f8f9fb] dark:bg-[#000814] hover:border-[#f8f9fb] dark:hover:border-[#000814] border-[#001233] dark:border-[#edf2fb] transition overflow-hidden">
-                    <div class="aspect-[16/9] overflow-hidden">
-                        <img src="assets/featured-more.gif" alt="More Projects" class="w-full h-full object-cover">
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-semibold dark:text-[#edf2fb] text-[#001233] mb-1">More Projects</h3>
-                        <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">See the full portfolio for everything else I've built.</p>
-                    </div>
+                <!-- ============ READ MORE ============ -->
+                <a href="portfolio.html" class="snap-start flex-shrink-0 w-44 flex items-center justify-center">
+                    <span class="flex items-center gap-2 text-lg font-semibold dark:text-[#edf2fb] text-[#001233] hover:scale-105 transition">
+                        Read More <i class="fa-solid fa-arrow-right"></i>
+                    </span>
                 </a>
-
             </div>
         </section>
 
@@ -434,196 +461,208 @@
                         </div>
                     </div>
 
-                    <!-- ============ SCHOOLHOUSE ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                    <!-- ============ COLLAPSIBLE SECTION STARTS HERE ============ -->
+                    <div id="sidequests-more" class="overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0px;">
+                        <!-- ============ SCHOOLHOUSE ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2022</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">schoolhouse.world</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as an online SAT tutor at the request of schoolhouse.world.</p>
+                            </div>
                         </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2022</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">schoolhouse.world</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as an online SAT tutor at the request of schoolhouse.world.</p>
+
+                        <!-- ============ RISE ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2022</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Rise For the World</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Became one of 500 RISE Global Finalists globally.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ DOFE GOLD ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2022</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Silver</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded the DofE Silver Award (could not complete Gold since I was underage).</p>
+                            </div>
+                        </div>
+                        <!-- ============ DOFE SILVER ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2020</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Bronze Award</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded the DofE Bronze Award.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ VIRTUOSO ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">March 2021</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Piano Virtuoso Competition</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded second in the Virtuoso Zambia classical music competition.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ AI50 ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">January 2021</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50AI</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Professional Certificate in Computer Science & Artificial Intelligence.</p>
+                            </div>
+                        </div>
+                        <!-- ============ CS50 ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50x</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Introduction to Computer Science.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ IGCSE ICE ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">June 2020 - July 2021</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Cambridge IGCSE & ICE certificate</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed the two-year-long International GCSE as a homeschooled candidate in a single year. Achieved ICE distinction with 8 A*.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ MUVI TV ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">July 2019 - January 2020</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Muvi Television Anchor</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as anchor of the weekly children's show, Kids & Teens Bloc.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ KARATE ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Kyokushin Kenbukaikan (Karate)</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">4th Kyu (Dark Green Belt; one below Brown) certification.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ WSC YALE ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">November 2019</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Tournament of Champions Round</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Participated in the WSC's Tournament of Champions at Yale University, USA.</p>
+                            </div>
+                        </div>
+                        <!-- ============ WSC DURBAN ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">September 2019</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Global Round</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked in the top 10 teams globally in the WSC's global round in Durban, South Africa.</p>
+                            </div>
+                        </div>
+                        <!-- ============ WSC LUSAKA ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">February 2019</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Regional Round</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked #1 team in the WSC's regional round in Lusaka, Zambia.</p>
+                            </div>
+                        </div>
+
+                        <!-- ============ ABRSM GUITAR ============ -->
+                        <div class="flex gap-2 mt-6">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Guitar</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 7.</p>
+                            </div>
+                        </div>
+                        <!-- ============ ABRSM PIANO ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                                <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Piano</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 5.</p>
+                            </div>
+                        </div>
+                        <!-- ============ ABRSM THEORY ============ -->
+                        <div class="flex gap-2 mt-1">
+                            <div class="flex flex-col items-center">
+                                <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
+                            </div>
+                            <div class="pb-2">
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
+                                <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Music Theory</h4>
+                                <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 6.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- ============ RISE ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2022</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Rise For the World</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Became one of 500 RISE Global Finalists globally.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ DOFE GOLD ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2022</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Silver</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed all requirements for the DofE Gold Award, but qualified for Silver due to age requirements.</p>
-                        </div>
-                    </div>
-                    <!-- ============ DOFE SILVER ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">May 2020</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Duke of Edinburgh Bronze Award</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded the DofE Bronze Award.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ VIRTUOSO ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">March 2021</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Piano Virtuoso Competition</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Awarded second in the Virtuoso Zambia classical music competition.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ AI50 ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">January 2021</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50AI</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Proffessional Certificate in Computer Science & Artificial Intelligence.</p>
-                        </div>
-                    </div>
-                    <!-- ============ CS50 ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">HarvardX's CS50x</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Introduction to Computer Science.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ IGCSE ICE ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">June 2020 - July 2021</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Cambridge IGCSE & ICE certificate</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Completed the two-year-long International GCSE as a homeschooled candidate in a single year. Achieved ICE distinction with 8 A*.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ MUVI TV ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">July 2019 - January 2020</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Muvi Television Anchor</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Volunteered as anchor of the weekly children's show, Kids & Teens Bloc.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ KARATE ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">December 2019</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">Kyokushin Kenbukaikan (Karate)</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">4th Kyu (Dark Green Belt; one below Brown) certification.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ WSC YALE ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">November 2019</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Tournament of Champions Round</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Participated in the WSC's Tournament of Champions at Yale University, USA.</p>
-                        </div>
-                    </div>
-                    <!-- ============ WSC DURBAN ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">September 2019</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Global Round</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked in the top 10 teams globally in the WSC's global round in Durban, South Africa.</p>
-                        </div>
-                    </div>
-                    <!-- ============ WSC LUSAKA ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">February 2019</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">World Scholar's Cup: Regional Round</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Ranked #1 team in the WSC's regional round in Lusaka, Zambia.</p>
-                        </div>
-                    </div>
-
-                    <!-- ============ ABRSM GUITAR ============ -->
-                    <div class="flex gap-2 mt-6">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Guitar</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 7.</p>
-                        </div>
-                    </div>
-                    <!-- ============ ABRSM PIANO ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                            <div class="w-px flex-1 bg-[#03045e] dark:bg-[#caf0f8] opacity-40 mt-2"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Piano</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 5.</p>
-                        </div>
-                    </div>
-                    <!-- ============ ABRSM THEORY ============ -->
-                    <div class="flex gap-2 mt-1">
-                        <div class="flex flex-col items-center">
-                            <div class="w-3 h-3 rounded-full bg-[#0077B6] dark:bg-[#00B4D8] mt-1.5"></div>
-                        </div>
-                        <div class="pb-2">
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-60 mb-1">2018</p>
-                            <h4 class="font-semibold dark:text-[#edf2fb] text-[#001233]">ABRSM Music Theory</h4>
-                            <p class="text-sm dark:text-[#edf2fb] text-[#001233] opacity-80">Grade 6.</p>
-                        </div>
+                    <!-- Toggle button -->
+                    <div class="flex justify-center mt-6">
+                        <button onclick="toggleSideQuests()" id="sidequests-toggle-btn"
+                                class="flex items-center gap-2 text-sm font-medium dark:text-[#edf2fb] text-[#001233] hover:opacity-70 transition">
+                            <span id="sidequests-toggle-text">Read More</span>
+                            <i id="sidequests-toggle-icon" class="fa-solid fa-chevron-down transition-transform duration-300"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -695,7 +734,7 @@
         </section>
 
         <!-- Footer -->
-        <footer class="pt-12 border-t text-center text-sm text-gray-500">
+        <footer class="pt-12 border-t text-center text-sm">
             <p>© 2026 Arnav Khanna. All Rights Reserved.</p>
         </footer>
     </div>    

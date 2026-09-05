@@ -6,8 +6,8 @@ Sanavo
 Structural Design Project '26
 
 IEP Tilt measurer? - popup
-TKS Google pitch deck - popup
-TKS Microsoft pitch deck - popup
+..TKS Google pitch deck - popup
+..TKS Microsoft pitch deck - popup
 Winter Project Yo - popup
 
 Any projects from AI50? CS50 website?
